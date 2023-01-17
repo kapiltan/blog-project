@@ -37,10 +37,10 @@ app.get("/compose", function(req,res){
 app.get("/posts/:param", (req,res) =>{
   const requestedtitle=_.lowerCase(req.params.param);
   posts.forEach(function(post){
-    const blogtitle = _.lowerCase(post.title);
-    if(requestedtitle===blogtitle){
-      res.render("post",{requestedblogtitle:blogtitle,requestedblogcontent:post.content});
-    }
+    const storedtitle = _.lowerCase(post.title);
+    if(requestedtitle===storedtitle){
+      res.render("post",{requestedblogtitle:post.title,requestedblogcontent:post.content});
+    }s
   })
 });
 
