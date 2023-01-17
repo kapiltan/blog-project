@@ -40,7 +40,7 @@ app.get("/posts/:param", (req,res) =>{
     const storedtitle = _.lowerCase(post.title);
     if(requestedtitle===storedtitle){
       res.render("post",{requestedblogtitle:post.title,requestedblogcontent:post.content});
-    }s
+    }
   })
 });
 
