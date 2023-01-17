@@ -39,10 +39,7 @@ app.get("/posts/:param", (req,res) =>{
   posts.forEach(function(post){
     const blogtitle = _.lowerCase(post.title);
     if(requestedtitle===blogtitle){
-      console.log("Match found!");
-    }
-    else{
-      console.log("Not a match!");
+      res.render("post",{requestedblogtitle:blogtitle,requestedblogcontent:post.content});
     }
   })
 });
